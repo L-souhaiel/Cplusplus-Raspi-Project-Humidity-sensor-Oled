@@ -1,3 +1,9 @@
+
+
+//This program give the user the Possiblity to manipulate Oled Display , BME260 humidty Sensor on Raspbbery PI : 3B+, 4. 
+//the humidty will be shown on the OLed Display. and Two modes will be present : Manual , Automatic.
+
+
 #include "gpio.h"
 #include "bme280.h"
 #include "oled.h"
