@@ -6,7 +6,7 @@ A C++ module to control humidity in a Room from accessing BME260 humidty Sensor 
 
 # Example 
 
-This Project Consist of two modes : 
+This Project Consists of two modes : 
 
 ## Automatic 
 
