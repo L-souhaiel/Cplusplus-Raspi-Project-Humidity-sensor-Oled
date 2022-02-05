@@ -1,6 +1,8 @@
 # BME260 and Oled SSH106 Display to control Humidity 
 
-A C++ module to control humidity in a Room from accessing BME260 humidty Sensor and Oled Display to print the data on . 
+A System that consists of a BME260 humidty Sensor and an Oled Display mounted on a raspberry PI to get and display the humidity value in a room.
+depending on the humidty value, the system chooses whether to increase or decrease humidity using a humidifier or dehumidifier.
+
 
 ![Layout](https://github.com/TitiLouati/Cplusplus-Raspi-Project-Humidity-sensor-Oled/blob/main/Humidity-Sensor-OledDisplay/BME260Oled.jpeg)
 
@@ -10,11 +12,11 @@ This Project Consists of two modes :
 
 ## Automatic 
 
-in this mode the program continue the measuring of the humidty in the room and print the data on  the Oled Display . when the humdity is less than 50 % then 
+In this mode the program measures the humidty in the room continuously and print the data on the Oled Display. when the humdity is less than 50 % then the
 
-humidifier  will turned on until the humdity will be greater than 50 %. and if the humidty is greater than 70 % ,the dehumidifier will turned on until the humdity 
+humidifier will be turned on until the humdity will be greater than 50 %. and if the humidty is greater than 70 % ,the dehumidifier will be turned on until the humdity 
 
-will be less than 70 % . 
+will be less than 70 %. when the humidity is between 50% and 70% bother the humidifer and dehumidifier will be turned off.
 
 in this project it will be used two leds instead of the humidifier and dehumidifier. 
 
@@ -28,9 +30,7 @@ the work mode will be printed on the screen too .
 
 # Program Construction
 
-every node of the program will all run in the same Time . the BME260 sensor will run on his own thread and the Oled Display will run  on his own thread . the 
-
-communication between the two threads will be synchronizid throw a mutex . 
+every node of the program will run at the same Time . The BME260 sensor and the Oled Display are using the same I2C communication interface port so they must run on different threads . the communication between the two threads will be synchronized through a mutex .
 
 # Dependencies
 
